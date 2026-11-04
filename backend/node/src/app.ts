@@ -4,17 +4,6 @@ import { prisma } from './shared/database/prisma.js';
 import { logger } from './shared/logger.js';
 import { errorHandler } from './shared/middlewares/error-handler.js';
 import { requestId } from './shared/middlewares/request-id.js';
-import { exigirGe } from './shared/middlewares/ge.js';
-import { lerPerfil } from './shared/middlewares/perfil.js';
-import { cadastrosRouter } from './modules/cadastros/cadastros.routes.js';
-import { painelRouter } from './modules/cadastros/painel.routes.js';
-import { escalaRouter } from './modules/escala/escala.routes.js';
-import { simulacoesRouter } from './modules/simulacoes/simulacoes.routes.js';
-import { custosRouter } from './modules/custos/custos.routes.js';
-import { geRouter } from './modules/ge/ge.routes.js';
-import { cargasLojasRouter } from './modules/cargas-lojas/cargas-lojas.routes.js';
-import { parametrosRouter } from './modules/parametros/parametros.routes.js';
-import { encargosRouter } from './modules/parametros/encargos.routes.js';
 import { usersRouter } from './modules/users/users.routes.js';
 import type { UsersRepository } from './modules/users/users.service.js';
 
@@ -51,22 +40,6 @@ export const createApp = (deps: AppDeps = {}) => {
   });
 
   app.use('/api/v1/users', usersRouter(deps.usersRepository));
-  app.use(
-    '/api/v1',
-    lerPerfil,
-    // Regras legais, grupos e carga de lojas são da plataforma: não pedem o GE.
-    parametrosRouter(),
-    encargosRouter(),
-    geRouter(),
-    cargasLojasRouter(),
-    // Daqui para baixo tudo é de um GE: o cabeçalho X-GE é obrigatório e conferido.
-    exigirGe,
-    cadastrosRouter(),
-    painelRouter(),
-    escalaRouter(),
-    simulacoesRouter(),
-    custosRouter(),
-  );
 
   app.use((_req, res) => {
     res.status(404).json({
