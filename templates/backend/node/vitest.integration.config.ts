@@ -7,8 +7,9 @@ export default defineConfig({
     fileParallelism: false,
     env: {
       NODE_ENV: 'test',
-      PORT: '3000',
-      DATABASE_URL: 'postgresql://postgres:postgres@localhost:5432/app_test',
+      PORT: '4000',
+      // Vem do Compose (TEST_DATABASE_URL); nenhuma credencial escrita aqui.
+      DATABASE_URL: process.env.TEST_DATABASE_URL ?? '',
     },
   },
 });

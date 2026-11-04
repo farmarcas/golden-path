@@ -1,5 +1,5 @@
 {
-  "name": "node-api-template",
+  "name": "api",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -12,7 +12,7 @@
     "start": "node dist/server.js",
     "lint": "eslint . && prettier --check .",
     "test": "vitest run",
-    "test:integration": "cross-env DATABASE_URL=postgresql://postgres:postgres@localhost:5432/app_test NODE_ENV=test prisma migrate deploy && cross-env DATABASE_URL=postgresql://postgres:postgres@localhost:5432/app_test NODE_ENV=test vitest run --config vitest.integration.config.ts",
+    "test:integration": "DATABASE_URL=\"$TEST_DATABASE_URL\" NODE_ENV=test prisma migrate deploy && vitest run --config vitest.integration.config.ts",
     "postinstall": "prisma generate"
   },
   "dependencies": {
@@ -37,7 +37,6 @@
     "@types/node": "^26.6.4",
     "@types/pg": "^8.23.1",
     "@types/supertest": "^7.2.1",
-    "cross-env": "^10.1.0",
     "eslint": "^10.12.0",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.9.9",

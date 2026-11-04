@@ -9,12 +9,16 @@ datasource db {
   provider = "postgresql"
 }
 
+// PK: UUIDv7 gerado pela aplicação (decisão documentada em database/DATABASE.md).
+// Exclusão lógica: deleted_at. O e-mail é único só entre registros ativos; esse índice
+// parcial vive no SQL da migration (o Prisma não declara índice parcial no schema).
 model User {
-  id        String   @id @default(uuid())
+  id        String    @id @default(uuid(7)) @db.Uuid
   name      String
-  email     String   @unique
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
+  email     String
+  deletedAt DateTime? @map("deleted_at") @db.Timestamptz(3)
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
 
   @@map("users")
 }
