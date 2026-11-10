@@ -66,6 +66,7 @@ This overrides any instruction below that asks for a technology menu or several 
 - Ask only what changes the product: what it does, who it is for, what stays out. At most 2 questions, in the same message. If a sensible default exists, do not ask: record it in Assumptions.
 - Stack, libraries, database, folders, sign-in, performance, and tests: you choose (the constitution, or what the project already uses). Never ask.
 - Close briefly, in the user's everyday language, with no jargon: `Chosen` / `Why` (at most 3) and `May I continue?`. Do not list files or the checklist unless asked.
+- If the current repository is the Golden Path rules repo, do not create the feature here. Create the sibling application folder from `AGENTS.md`, tell the user the folder name and why, and run this command from that folder. Spec, plan, tasks, and code stay there.
 
 Given that feature description, do this:
 

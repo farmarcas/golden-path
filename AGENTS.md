@@ -6,6 +6,23 @@ Uma skill é o procedimento de uma atividade. O guia da pasta é a política daq
 
 Carregue o contexto que o pedido exige. Pedido de tela abre o frontend. Pedido de endpoint abre o backend do runtime escolhido. Pedido de tabela abre o banco. Pedido para subir o ambiente abre o Docker. Os demais contextos ficam fechados.
 
+## Onde a aplicação nasce
+
+Esta pasta é só regra, guia e modelo. A aplicação da pessoa não entra aqui.
+
+1. Aplicação nova: crie uma pasta irmã deste repositório, ao lado, nunca dentro. O agente escolhe o nome a partir do que foi pedido (curto, com hífens, sem data) e avisa o que escolheu e por quê. Não pergunte o nome da pasta.
+2. Spec, plano, tarefas, código, Docker e `.env` da solução ficam só nessa pasta. O Spec Kit roda lá, não aqui.
+3. Daqui você só lê guias, skills e `templates/`. Copie o modelo para a pasta nova. Não altere `frontend/`, `backend/`, `specs/` nem o Compose desta raiz para atender o pedido.
+4. Se a pessoa já estiver numa pasta de aplicação fora daqui, continue nela. Não crie outra.
+5. Correção de guia, skill ou template do próprio Golden Path continua nesta pasta.
+
+Exemplo: as regras em `.../golde-path` e a lista de tarefas em `.../lista-de-tarefas`.
+
+```text
+Escolhi: a pasta lista-de-tarefas, ao lado das regras.
+Por quê: assim o que você pediu não se mistura com o manual.
+```
+
 ## Como decidir
 
 1. Leia o pedido e liste os contextos envolvidos: interface, API, banco, ambiente local.

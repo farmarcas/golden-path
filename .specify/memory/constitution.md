@@ -50,6 +50,16 @@ padrão sensato, o agente decide e avisa. Cada escolha técnica relevante fecha
 com duas linhas — o que foi escolhido e por quê — em linguagem do dia a dia.
 Guia curto: `SPECKIT.md`.
 
+### IX. A aplicação fica fora do Golden Path (NÃO NEGOCIÁVEL)
+O repositório do Golden Path guarda regras, guias, skills e modelos. A aplicação
+nova nasce numa pasta irmã, ao lado deste repositório, nunca dentro dele. O
+agente escolhe o nome a partir do pedido e avisa o que escolheu e por quê.
+
+Spec, plano, tarefas, código, Docker e `.env` da solução ficam só nessa pasta.
+Deste repositório só se lê e se copia. Não se altera `frontend/`, `backend/`,
+`specs/` nem o Compose da raiz para construir o pedido da pessoa. Se a pasta da
+aplicação já existir, o trabalho continua nela.
+
 ## Restrições Adicionais
 - Segredos nunca entram no git: nada de senhas reais, chaves ou tokens no repositório.
 - Seguir as skills de cada área (`infrastructure/docker`, `database`, `frontend`,
@@ -67,4 +77,4 @@ Esta constituição prevalece sobre outras práticas do projeto. Mudanças exige
 atualizar este arquivo e a versão abaixo. Todo `plan.md` deve verificar
 conformidade com estes princípios. Guia de uso diário: `CLAUDE.md` e `SPECKIT.md`.
 
-**Version**: 1.2.0 | **Ratified**: 2026-10-09 | **Last Amended**: 2026-10-09
+**Version**: 1.3.0 | **Ratified**: 2026-10-09 | **Last Amended**: 2026-11-10

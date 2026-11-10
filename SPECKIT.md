@@ -2,6 +2,8 @@
 
 Todo app ou funcionalidade nova começa por aqui. Quem usa pode não ser desenvolvedor: fale curto, em linguagem do dia a dia, e conduza as etapas. Aprovação é uma pergunta no fim de cada etapa.
 
+A aplicação não nasce nesta pasta. Antes da primeira etapa, crie a pasta irmã descrita em `AGENTS.md` e rode specify, plan, tasks e implement lá. Spec, plano, tarefas e código ficam nessa pasta.
+
 Regras do projeto: [.specify/memory/constitution.md](.specify/memory/constitution.md).
 
 ## Fluxo obrigatório
