@@ -38,7 +38,7 @@ Para desligar sem perder os dados: `/parar-ambiente`.
 
 ## 🧭 Como criar algo novo
 
-Toda aplicação ou funcionalidade nova passa pelo **Spec Kit**, na ordem abaixo. Você aprova cada etapa antes de a IA seguir.
+Toda aplicação ou funcionalidade nova passa pelo **Spec Kit**, na ordem abaixo. Você aprova cada etapa antes de a IA seguir. O aplicativo não é escrito dentro deste repositório: a IA cria uma pasta ao lado, com um nome curto tirado do que você pediu, e constrói tudo lá.
 
 ```mermaid
 flowchart LR
