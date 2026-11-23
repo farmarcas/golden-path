@@ -21,12 +21,12 @@ for f in $(git ls-files | grep -E 'skills/.*/SKILL\.md$' | grep -v '^\.claude/sk
   [ "$(cd .claude/skills/$name && pwd -P)" = "$(cd "$(dirname "$f")" && pwd -P)" ] || fail ".claude/skills/$name aponta para outra pasta que não $(dirname "$f")"
 done
 
-# 3. Links markdown relativos não quebrados (ignora Spec Kit)
+# 3. Links markdown relativos não quebrados (ignora Spec Kit e modelos, que têm links de exemplo)
 python3 - <<'PY' || FAIL=1
 import os, re, subprocess, sys
 bad = 0
 for f in subprocess.check_output(["git", "ls-files"], text=True).split("\n"):
-    if not f.lower().endswith(".md") or f.startswith((".specify", ".claude/skills/")):
+    if not f.lower().endswith(".md") or f.startswith((".specify", ".claude/skills/", "documentation/templates/", "templates/docs/")):
         continue
     text = open(f, encoding="utf-8").read()
     text = re.sub(r"```.*?```", "", text, flags=re.S)

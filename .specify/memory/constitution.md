@@ -60,6 +60,16 @@ Deste repositório só se lê e se copia. Não se altera `frontend/`, `backend/`
 `specs/` nem o Compose da raiz para construir o pedido da pessoa. Se a pasta da
 aplicação já existir, o trabalho continua nela.
 
+### X. Documentação viva é obrigatória (NÃO NEGOCIÁVEL)
+Toda aplicação mantém, na própria pasta, um PRD (`docs/PRD.md`), a documentação
+funcional por módulo (`docs/funcional/`) e um `CHANGELOG.md`, nos modelos de
+`documentation/templates/` e seguindo `documentation/DOCUMENTATION.md`. O PRD nasce
+junto com a primeira `spec.md`. Funcionalidade nova ou alterada só está pronta
+quando o funcional e o changelog refletem o que foi entregue. Os documentos são
+em português simples e de negócio; o que não se sabe vira `[A CONFIRMAR]`, nunca
+suposição. Aplicação que já existe e não tem esses documentos recebe a primeira
+versão antes de sua próxima funcionalidade.
+
 ## Restrições Adicionais
 - Segredos nunca entram no git: nada de senhas reais, chaves ou tokens no repositório.
 - Seguir as skills de cada área (`infrastructure/docker`, `database`, `frontend`,
@@ -70,6 +80,7 @@ aplicação já existir, o trabalho continua nela.
   `/speckit-tasks` → `/speckit-implement`, com aprovação a cada etapa.
 - Exceção única: correções pequenas em algo que já existe (texto, cor, bug
   simples) podem ser feitas direto, sem spec.
+- Ao concluir, atualizar o PRD, o funcional e o changelog (skill `product-docs`).
 - Ao concluir, confirmar que o ambiente sobe e informar a URL de acesso.
 
 ## Governance
@@ -77,4 +88,4 @@ Esta constituição prevalece sobre outras práticas do projeto. Mudanças exige
 atualizar este arquivo e a versão abaixo. Todo `plan.md` deve verificar
 conformidade com estes princípios. Guia de uso diário: `CLAUDE.md` e `SPECKIT.md`.
 
-**Version**: 1.3.0 | **Ratified**: 2026-10-09 | **Last Amended**: 2026-11-10
+**Version**: 1.4.0 | **Ratified**: 2026-10-09 | **Last Amended**: 2026-11-23

@@ -45,6 +45,18 @@ Um serviço usa um runtime. Node e Python não convivem no mesmo serviço. Ofere
 
 Quem pede pode não ser desenvolvedor. Explique em linguagem simples, curto, e execute os comandos você mesmo. Não pergunte stack: use o padrão (ou o que o projeto já tem), diga o que escolheu e por quê. Perguntas só de negócio. No Spec Kit, siga `SPECKIT.md`.
 
+## Documentação — PRD, funcional e changelog
+
+Guia: `documentation/DOCUMENTATION.md`
+
+Abra este contexto ao criar uma aplicação, fechar uma funcionalidade ou versão, ou quando a pessoa pedir PRD, documentação funcional ou changelog. Faz parte do Spec Kit (`SPECKIT.md`) e da constituição (princípio X).
+
+| Atividade | Skill | Abra quando | Pule quando |
+| --- | --- | --- | --- |
+| PRD, documentação funcional, changelog e decisões | `documentation/skills/product-docs/SKILL.md` | Aplicação nova; funcionalidade nova ou alterada; entrega de versão; "documentar o projeto" | O pedido for só spec, plano ou tarefas, ou documentação técnica de código |
+
+Os documentos ficam na pasta da aplicação (`docs/` e `CHANGELOG.md`). Modelos: `templates/docs` (cópia gerada por `scripts/sync-templates.sh`; a fonte é `documentation/templates`). Aplicação existente sem documentação: a skill traz o passo "Aplicação existente".
+
 ## Ordem sugerida ao montar uma aplicação inteira
 
 Esta ordem é um caminho, não uma lista obrigatória. Pule a etapa cujo contexto o pedido não tem.
@@ -54,6 +66,7 @@ Esta ordem é um caminho, não uma lista obrigatória. Pule a etapa cujo context
 3. **Interface** — estrutura da tela e, se houver visual, Tailwind.
 4. **Ambiente** — Dockerfiles e Compose, quando o projeto precisar rodar em container.
 5. **Subir** — somente quando a pessoa pedir para rodar, ou quando a entrega incluir o ambiente no ar.
+6. **Documentar** — PRD, funcional e changelog, ao fechar cada funcionalidade.
 
 Schema, migration e seed nascem nas skills de banco. A skill de API consome o banco; ela não substitui `schema-design`, `migrations` nem `seed-data`.
 

@@ -62,6 +62,7 @@ golden-path/
 ├── backend/node/        API: Node.js + TypeScript + Prisma (há também guia para Python, sem esqueleto)
 ├── database/postgres/   Banco: PostgreSQL com migrations
 ├── infrastructure/docker/  Docker Compose e guias de ambiente
+├── documentation/       Guia e modelos de PRD, documentação funcional e changelog
 ├── templates/           Cópias dos modelos (geradas; não edite)
 ├── scripts/             Verificações e sincronização dos templates
 ├── specs/               Especificações de cada funcionalidade
@@ -76,6 +77,7 @@ Cada pasta traz um **guia** (as regras daquela tecnologia) e **skills** (o passo
 | Um endpoint | [backend/BACKEND.md](backend/BACKEND.md) |
 | Uma tabela | [database/DATABASE.md](database/DATABASE.md) |
 | Rodar o ambiente | [infrastructure/docker/DOCKER.md](infrastructure/docker/DOCKER.md) |
+| Documentar (PRD, funcional, changelog) | [documentation/DOCUMENTATION.md](documentation/DOCUMENTATION.md) |
 
 ---
 
@@ -85,6 +87,7 @@ As regras ficam na [constituição do projeto](.specify/memory/constitution.md).
 
 - **Spec Kit obrigatório** para app e funcionalidade nova.
 - **Tudo em Docker**: nada para instalar além do Docker Desktop. As portas só aceitam conexões do seu computador.
+- **Documentação viva**: PRD, documentação funcional e changelog atualizados a cada funcionalidade.
 - **Banco só muda por migration**, nunca na mão.
 - **Dados protegidos**: `docker compose down -v` e similares só rodam com sua confirmação.
 - **Segredos fora do git**: senhas ficam no `.env`, que nunca é versionado.
