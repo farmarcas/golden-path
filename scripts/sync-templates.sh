@@ -26,6 +26,10 @@ copy backend/node/.dockerignore                 templates/docker/.dockerignore
 copy frontend/react/Dockerfile                  templates/docker/react.Dockerfile
 copy frontend/react/docker/dev-entrypoint.sh    templates/docker/react.dev-entrypoint.sh
 
+for t in PRD.md FUNCIONAL.md FUNCIONAL-INDICE.md CHANGELOG.md DECISAO.md; do
+  copy "documentation/templates/$t" "templates/docs/$t"
+done
+
 EXCLUDES="--exclude=skills --exclude=node_modules --exclude=dist --exclude=src/generated --exclude=coverage --exclude=.env"
 if [ "$MODE" = "--check" ]; then
   # Só conteúdo importa: 'c' = checksum diferente; '+++' = arquivo novo; '*deleting' = sobra no template.

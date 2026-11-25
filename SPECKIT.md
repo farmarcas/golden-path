@@ -19,6 +19,16 @@ A constituição (`/speckit-constitution`) é feita uma vez e só muda se as reg
 
 Opcionais, quando a funcionalidade for grande: `/speckit-clarify` (antes do plan, só para regra de negócio), `/speckit-checklist`, `/speckit-analyze` (antes do implement).
 
+## Documentação viva
+
+Além dos arquivos do Spec Kit, toda aplicação mantém `docs/PRD.md`, `docs/funcional/` e `CHANGELOG.md` na própria pasta. Siga a skill `product-docs` (`documentation/skills/product-docs/SKILL.md`):
+
+- Depois do primeiro `/speckit-specify`: criar o PRD a partir do que a pessoa pediu.
+- Antes de fechar `/speckit-implement`: atualizar o funcional do módulo tocado e o changelog. Sem isso a funcionalidade não está pronta.
+- Aplicação que já existe e não tem esses documentos: gerar a primeira versão antes da nova funcionalidade.
+
+O `spec.md` conta como a funcionalidade foi pedida; o funcional conta como o produto é hoje.
+
 ## Como decidir e falar
 
 A pessoa aprova o que o produto faz. O agente escolhe como construir.
